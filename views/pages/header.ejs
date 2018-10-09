@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Node - Express et Ejs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/assets/bootstrap/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="/assets/bootstrap/bootstrap.min.css">
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-light bg-info shadow-sm p-3 rounded justify-content-around">
+      <a class="navbar-brand" href="/">Home</a>
+      <a class="navbar-brand" href="/about">About</a>
+    </nav>
+  </header>
+  <% if (locals.messageflash && locals.messageflash.error) { %>
+  <div class="alert alert-danger text-center shadow-lg p-3 mb-5 rounded" role="alert">
+    <%= messageflash.error %>
+  </div>
+  <% } %>
+  <% if (locals.messageflash && locals.messageflash.good) { %>
+  <div class="alert alert-success text-center shadow-lg p-3 mb-5 rounded" role="alert">
+    <%= messageflash.good %>
+  </div>
+  <% } %>
